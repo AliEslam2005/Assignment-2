@@ -23,7 +23,6 @@
 */
 
 .container{
-
     display: grid;
     grid-template-areas:
         "header"
@@ -164,12 +163,6 @@
     
 }
 
-
-
-
-
-
-
 .content2{
     grid-area: content2;
     background-color: #e1e1e1; /* #e1e1e1 */
@@ -236,7 +229,25 @@
     padding: 10px;
     /*grid-column: 1/6; // removed due to now using auto
     grid-row: 8/10;*/
+    
 }
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.contact > img{
+
+    
+}
+
 .footer2{
     grid-area: footer2;
     background-color: #444444;
@@ -247,6 +258,65 @@
     z-index: 1;
     text-align: center;
     padding: 10px;
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-start; /* align content to the left */
+    align-items: center;
+    padding: 20px 80px;
+    gap: 200px;
+    color: #ffffff;
+}
+
+.logoWrapper {
+    position: relative;
+    display: inline-block;
+    width: 150px; /* Set desired size */
+    height: auto;
+}
+
+.UTMLogo {
+    display: block;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* This overlay will appear on hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.5); /* semi-transparent grey */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Hover state */
+.logoWrapper:hover .overlay {
+    opacity: 1;
+}
+
+.teamInfo > a{
+
+    color: #ffff;
+    transition: 0.3s ease;
+}
+
+.teamInfo > a:hover{
+
+    color: #bbbbbb;
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff; /* Ensure it's readable on dark background */
 }
 
 .copyright{
