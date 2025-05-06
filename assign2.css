@@ -132,6 +132,43 @@
     
 }
 
+.AliIsameldin{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+
+}
+
+.AliIsameldin > p{
+    font-size: 18px;
+    width: 50%;
+    text-align: right;
+}
+
+.AliIsameldin > span{
+
+    font-size: 150%;
+}
+
+.AliIsameldin > img{
+
+    width: 250px;
+    height: auto;
+    float: right;
+    
+}
+
+
+
+
+
+
 
 .content2{
     grid-area: content2;
