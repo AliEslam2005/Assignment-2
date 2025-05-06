@@ -1,8 +1,13 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
+}  
 
+
+/* stopped using this due to the fact that when not using auto: 
+   when an area size changes, everything else also changes to match its size
 .container {
     display: grid;
     grid-template-areas:
@@ -15,50 +20,201 @@ body {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
 }
+*/
 
-.header {
+.container{
+
+    display: grid;
+    grid-template-areas:
+        "header"
+        "content"
+        "content2"
+        "content3"
+        "footer"
+        "footer2";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+
+.header{
     grid-area: header;
     background-color: #ffff;
-    padding: 10px;
-    grid-column: 1/6;
-    grid-row: 1/2;
+    padding: 0 20px;
     position: fixed;
     width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.content {
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 350px;
+    height: auto;
+    bottom: 100px;
+}
+
+.welcome-text{
+    text-align: center;
+    color: #035daf; /* prev color shelfed  if used later: rgb(0, 200, 255)*/
+    flex-grow: 1;
+    font-size: 40px;
+}
+
+.nav-bar{
+    display: flex;
+    gap: 20px;
+}
+.nav-bar a{
+    text-decoration: none;
+    color: #035daf;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-bar a:hover{
+    color: #003261;
+    border-bottom: 2px solid #003261;
+    padding-bottom: 10px;
+}
+
+.utmGate{
+
+    width: 100%;
+    vertical-align: bottom;
+    
+}
+
+.content{
+    
+    padding-top:95px;
     grid-area: content;
     background-color: whitesmoke;
-    padding: 20px;
-    grid-column: 1/6;
-    grid-row: 2/4;
+    /*grid-column: 1/6; // removed due to now using auto
+    grid-row: 2/4;*/
 }
-.content2 {
+
+.AliHashish{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+
+}
+
+.AliHashish > p{
+
+    font-size: 18px;
+    width: 50%;
+    text-align: right;
+    
+}
+
+.AliHashish > span{
+
+    font-size: 150%;
+}
+
+.AliHashish > img{
+
+    width: 250px;
+    height: auto;
+    float: right;
+    
+}
+
+
+.content2{
     grid-area: content2;
     background-color: #e1e1e1; /* #e1e1e1 */
     padding: 20px;
-    grid-column: 1/6;
-    grid-row: 4/6;
+    /*grid-column: 1/6; // removed due to now using auto
+    grid-row: 4/6;*/
 }
-.content3 {
+.aboutTitle{
+    text-align: center;
+    font-size: 50px;
+    color: #035daf;
+    margin-bottom: 20px;
+}
+
+.aboutParagraph{
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+
+
+.content3{
     grid-area: content3;
     background-color: whitesmoke;
     padding: 20px;
-    grid-column: 1/6;
-    grid-row: 6/8;
+    /*grid-column: 1/6; // removed due to now using auto
+    grid-row: 6/8;*/
+}
+.ResearchTitle{
+
+    
+    font-size: 50px;
+    color: #035daf;
+    margin-bottom: 20px;
+}
+.researchLinks{
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
-.footer {
+.researchLinks a{
+    color: #035daf;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.researchLinks a:hover{
+    color: #003261;
+    border-bottom: 2px solid #003261;
+}
+
+.footer{
     grid-area: footer;
     background-color: #1f2a37;
     padding: 10px;
-    grid-column: 1/6;
-    grid-row: 8/10;
+    /*grid-column: 1/6; // removed due to now using auto
+    grid-row: 8/10;*/
 }
-.footer2 {
+.footer2{
     grid-area: footer2;
     background-color: #444444;
+    /*grid-column: 1/6; // removed due to now using auto
+    grid-row: 10/11;*/
+    font-size: 11px;
+    margin-top: -1px;
+    z-index: 1;
+    text-align: center;
     padding: 10px;
-    grid-column: 1/6;
-    grid-row: 10/11;
+}
+
+.copyright{
+
+    font-weight: 700; 
+    text-align: center;
+    color: #ffff;
+    font-family:'Times New Roman', Times, serif
 }
