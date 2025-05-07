@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }  
-
+html {
+    scroll-behavior: smooth;
+}
 
 /* stopped using this due to the fact that when not using auto: 
    when an area size changes, everything else also changes to match its size
@@ -241,11 +243,6 @@
     margin-bottom: 50px;
     margin-left: 80px;
     margin-right: 80px;
-}
-
-.contact > img{
-
-    
 }
 
 .footer2{
