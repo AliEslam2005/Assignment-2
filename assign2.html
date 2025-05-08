@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website Landing Page Creation Using HTML 5 and CSS Grid Layout</title>
 
+    <!-- Linking external CSS file -->
     <link rel="stylesheet" href="assign2.css">
 </head>
 <body>
     
+    <!-- Main container for the entire layout, structured using CSS Grid -->
     <div class="container" id="home">
 
-        <!-- Header Section -->
+        <!-- ==================== HEADER SECTION ==================== -->
+        <!-- Fixed top header containing logo, welcome message, and navigation links -->
         <div class="header">
             <div class="header-content">
+                <!-- Team logo image -->
                 <img src="./assets/WebBuilders Logo.png" alt="Team logo Web Builders" class="logo" style="padding-top: 5px;">
+                
+                <!-- Centered welcome text -->
                 <h1 class="welcome-text">Welcome To Our Website</h1>
+                
+                <!-- Navigation bar linking to different page sections -->
                 <nav class="nav-bar">
                     <a href="#home" id="hnav">Home</a>
                     <a href="#our-team" id="tnav">Team</a>
@@ -27,18 +35,21 @@
             </div>
         </div>
 
-        <!-- Main Content Area -->
-         
+        <!-- ==================== TEAM INTRODUCTION SECTION ==================== -->
         <div class="content">
             
+            <!-- UTM Gate Banner Image -->
             <img class="utmGate" id="GATE" src="./assets/UTM(1).webp" alt="UTM GATE">
+            
+            <!-- Team Member Descriptions -->
             <div class="Group_Members" id="our-team">
 
+                <!-- Section Title -->
                 <h1 style="text-align: center; padding: 20px; color: #035daf; font-size: 60px;">Our Team</h1>
+                
+                <!-- First Team Member: Ali Eslam EssamEldin Hashish -->
                 <div class="AliHashish">
-
                     <p style="text-align: right;">
-
                         <span style="font-size: 150%; color: #035daf;">Ali Eslam EssamEldin Hashish</span>
                         is currently a second-year student of Bachelor of Software Engineering in Universiti Teknologi Malaysia (UTM). 
                         He stayed in Saudi Arabia, Riyadh but was born in Egypt, Alexandria. 
@@ -48,10 +59,9 @@
                     <img class="IMG" src="./assets/ALIHashish.jpg" alt="Image of Ali Eslam EssamEldin Hashish">
                 </div>
                 
+                <!-- Second Team Member: Ali Isameldin Ali Abdelrhman -->
                 <div class="AliIsameldin">
-                   
                     <p style="text-align: right;">
-
                         <span style="font-size: 150%; color: #035daf;">Ali Isameldin Ali Abdelrhman</span>
                         is currently a second-year student of Bachelor of Software Engineering in Universiti Teknologi Malaysia (UTM). 
                         He stayed in Saudi Arabia, and was born in Saudi Arabia, Jeddah. 
@@ -60,11 +70,10 @@
                     <img class="IMG" src="./assets/Ali.jpg" alt="Image of Ali Isameldin Ali Abdelrhman">
                 </div>
 
+                <!-- Third Team Member: Hu Hao -->
                 <div class="HuHao">
-
                     <p style="text-align: right;">
-
-                    <span style="font-size: 150%; color: #035daf;">Hu Hao</span>
+                        <span style="font-size: 150%; color: #035daf;">Hu Hao</span>
                         is currently a second-year student of Bachelor of Software Engineering in Universiti Teknologi Malaysia (UTM). 
                         He was born in Guizhou, China.
                         He likes video games and wants to design a global popular game by himself through his studies at UTM
@@ -73,15 +82,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
         <div class="content2" id="cnav2">
             <h1 class="aboutTitle" id="aboutNav">About Us</h1>
-            <div id="researchLoc"></div> 
+            
+            <!-- Introductory Paragraph about the team -->
             <p class="aboutParagraph">
                 At Web Builders, we are a passionate team of software engineering students dedicated to building clean, functional, and engaging websites. 
                 Together, we collaborate on web development projects that combine our individual strengths in design, coding, and problem-solving. 
                 From front-end interfaces to back-end functionality, we strive to learn, innovate, and grow as a team to delivering quality solutions while supporting each other's progress.
             </p>
         
+            <!-- Front-End Development Description with image -->
             <div class="aboutSection frontEnd">
                 <img src="./assets/front-end.png" alt="Front-End Development Image">
                 <p>
@@ -90,6 +103,7 @@
                 </p>
             </div>
         
+            <!-- Back-End Development Description with image -->
             <div class="aboutSection backEnd">
                 <p>
                     On the back-end side, we are skilled in building server-side logic using technologies like php.
@@ -98,68 +112,69 @@
                 <img src="./assets/back-end.jpg" alt="Back-End Development Image">
             </div>
         </div>
-        
-        <div class="content3" id="cnav3">
+
+        <!-- ==================== RESEARCH SECTION ==================== -->
+        <div class="content3" id="researchLoc">
             <h1 class="ResearchTitle">Research</h1>
             
+            <!-- List of Research Articles with Dates -->
             <div class="researchLinks">
                 <strong>March 5, 2025</strong><br>
                 <a href="#" target="_blank">The Future of Web Frameworks: Comparing React, Svelte, and Next.js</a>
             </div>
-        
             <div class="researchLinks">
                 <strong>November 12, 2024</strong><br>
                 <a href="#" target="_blank">Understanding Security Risks in Modern Web Applications</a>
             </div>
-        
             <div class="researchLinks">
                 <strong>August 30, 2024</strong><br>
                 <a href="#" target="_blank">AI-Assisted Coding: Opportunities and Challenges in Front-End Development</a>
             </div>
-        
             <div class="researchLinks">
                 <strong>June 18, 2023</strong><br>
                 <a href="#" target="_blank">The Evolution of JavaScript: From jQuery to ESNext</a>
             </div>
-        
             <div class="researchLinks">
                 <strong>April 10, 2022</strong><br>
                 <a href="#" target="_blank">Exploring Open Source Contributions in Web Software Engineering Education</a>
             </div>
-        
             <div class="researchLinks">
                 <strong>January 5, 2021</strong><br>
                 <a href="#" target="_blank">DevOps and Continuous Deployment in Scalable Web Applications</a>
             </div>
         </div>
 
-        <!-- Footer Section -->
+        <!-- ==================== FOOTER SECTION ==================== -->
         <div class="footer" id="fnav">
-
             <div class="contact">
-
+                
+                <!-- UTM Logo with overlay hover effect -->
                 <div class="footerLogo">
-                    
                     <a href="https://www.utm.my/">
                         <div class="logoWrapper">
                             <img src="./assets/UTMLogo.png" alt="utm logo" class="UTMLogo">
                             <div class="overlay"></div>
                         </div>
                     </a>
-                </div>                
+                </div>  
+                
+                <!-- UTM and Team Info -->
                 <div class="Info">
                     <p>Universiti Teknologi Malaysia<br>Faculty of Computing<br>Web Builders Team</p>
                 </div>
-                <div class="teamInfo">
 
+                <!-- Email Contacts for Team Members -->
+                <div class="teamInfo">
                     <p>Ali Eslam EssamEldin Hashish utm email address:</p>
                     <a href="mailto:eslamessameldin@graduate.utm.my">
                         <span style="font-weight: 400;">eslamessameldin@graduate.utm.my</span>
                     </a><br><br><br>
+
                     <p>Ali Isameldin Ali Abdelrhman utm email address:</p>
                     <a href="mailto:isameldinali@graduate.utm.my">
                         <span style="font-weight: 400;">isameldinali@graduate.utm.my</span>
                     </a><br><br><br>
+
                     <p>Hu Hao utm email address:</p>
                     <a href="mailto:huhao@graduate.utm.my">
                         <span style="font-weight: 400;">huhao@graduate.utm.my</span>
@@ -168,12 +183,13 @@
             </div>
         </div>
 
+        <!-- Bottom Footer Text -->
         <div class="footer2">
-
             <span class="copyright">© 2025 Web Builders. All rights reserved.</span>
         </div>
     </div>
 
+    <!-- Link to external JavaScript (currently unspecified functionality) -->
     <script src="assign2.js"></script>
 </body>
 </html>

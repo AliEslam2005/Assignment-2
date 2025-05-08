@@ -1,15 +1,18 @@
-* {
+/* General Reset: Ensures consistency across browsers by removing default margin, padding, and setting box-sizing to border-box */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}  
-html {
+    font-family: Arial, sans-serif; /* Set font family to Arial for consistent appearance */
+}
+
+/* Smooth scrolling for the entire document */
+html{
     scroll-behavior: smooth;
 }
 
-/* stopped using this due to the fact that when not using auto: 
-   when an area size changes, everything else also changes to match its size
+/* Grid layout for the main container (commented out unused template areas for clarity) */
+/*
 .container {
     display: grid;
     grid-template-areas:
@@ -19,11 +22,12 @@ html {
         "content3 content3 content3"
         "footer footer footer"
         "footer2 footer2 footer2";
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(5, 1fr);  // Using 5 equal-width columns
+    grid-template-rows: repeat(10, 1fr);   // Using 10 equal-height rows
 }
 */
 
+/* Main container uses a single column grid layout for simplicity */
 .container{
     display: grid;
     grid-template-areas:
@@ -32,193 +36,136 @@ html {
         "content2"
         "content3"
         "footer"
-        "footer2";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+        "footer2"; /* Defining the areas for different sections */
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto auto auto auto auto auto; /* Automatic row sizing based on content */
 }
 
+/* Header Section: Fixed position at the top with shadow for visual separation */
 .header{
     grid-area: header;
-    background-color: #ffff;
+    background-color: #ffff; /* White background for header */
     padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    position: fixed; /* Keeps header visible at the top even on scroll */
+    width: 100%; /* Full width of the page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1; /* Ensures header stays above other content */
 }
 
+/* Header content uses flexbox to position elements (logo, welcome text, and nav) */
 .header-content{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Spreads out logo and nav */
+    align-items: center; /* Vertically centers content */
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
 
+/* Logo styling: adjusts width while maintaining aspect ratio */
 .logo{
-    width: 350px;
-    height: auto;
-    bottom: 100px;
+    width: 350px; 
+    height: auto; 
+    bottom: 100px; /* Small bottom margin for spacing */
 }
 
+/* Welcome text styling: central alignment and color */
 .welcome-text{
     text-align: center;
-    color: #035daf; /* prev color shelfed  if used later: rgb(0, 200, 255)*/
-    flex-grow: 1;
-    font-size: 40px;
+    color: #035daf; /* Blue color for visual appeal */
+    flex-grow: 1; /* Allows welcome text to take available space */
+    font-size: 40px; /* Adjusts text size for header */
 }
 
+/* Navigation bar with links spaced out horizontally */
 .nav-bar{
     display: flex;
     gap: 20px;
 }
+
+/* Styling for nav links: removing underline and adding hover effects */
 .nav-bar a{
     text-decoration: none;
-    color: #035daf;
+    color: #035daf; /* Matching blue color for links */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Smooth color transition */
 }
+
+/* Hover effect for links: darker blue color and underlined */
 .nav-bar a:hover{
     color: #003261;
     border-bottom: 2px solid #003261;
     padding-bottom: 10px;
 }
 
+/* Full-width image for UTM Gate */
 .utmGate{
-
     width: 100%;
     vertical-align: bottom;
-    
 }
 
+/* Content section: Padding adjusted to account for fixed header */
 .content{
-    
-    padding-top:95px;
+    padding-top: 95px;
     grid-area: content;
-    background-color: whitesmoke;
-    /*grid-column: 1/6; // removed due to now using auto
-    grid-row: 2/4;*/
+    background-color: whitesmoke; /* Light background color */
 }
 
-.AliHashish{
-
+/* Flexbox layout for team member sections */
+.AliHashish, .AliIsameldin, .HuHao{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 70px; /* Spacing between text and images */
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 80px;
     margin-right: 80px;
-
 }
 
-.AliHashish > p{
-
+/* Paragraph styling for team members */
+.AliHashish > p, .AliIsameldin > p, .HuHao > p{
     font-size: 18px;
     width: 50%;
-    text-align: right;
-    
+    text-align: right; /* Right-align text for better readability */
 }
 
-.AliHashish > span{
-
-    font-size: 150%;
+/* Span for larger text size for names */
+.AliHashish > span, .AliIsameldin > span, .HuHao > span{
+    font-size: 150%; /* Enlarges name text */
 }
 
-.AliHashish > img{
-
+/* Image styling for team members: keeps images to a consistent size */
+.AliHashish > img, .AliIsameldin > img, .HuHao > img{
     width: 250px;
     height: auto;
-    float: right;
-    
+    float: right; /* Floats image to the right of text */
 }
 
-.AliIsameldin{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 80px;
-    margin-right: 80px;
-
-}
-
-.AliIsameldin > p{
-    font-size: 18px;
-    width: 50%;
-    text-align: right;
-}
-
-.AliIsameldin > span{
-
-    font-size: 150%;
-}
-
-.AliIsameldin > img{
-
-    width: 250px;
-    height: auto;
-    float: right;
-    
-}
-
-/*             */
-.HuHao{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 80px;
-    margin-right: 80px;
-
-}
-
-.HuHao > p{
-    font-size: 18px;
-    width: 50%;
-    text-align: right;
-}
-
-.HuHao > span{
-
-    font-size: 150%;
-}
-
-.HuHao > img{
-
-    width: 250px;
-    height: auto;
-    float: right;
-}
-
+/* About Section: Background color and padding adjustments */
 .content2{
     grid-area: content2;
-    background-color: #e1e1e1; /* #e1e1e1 */
+    background-color: #e1e1e1; /* Light grey background for contrast */
     padding: 20px;
-    /*grid-column: 1/6; // removed due to now using auto
-    grid-row: 4/6;*/
 }
+
+/* Styling for the About Us section title */
 .aboutTitle{
     text-align: center;
     font-size: 50px;
-    color: #035daf;
+    color: #035daf; /* Blue title color */
     margin-bottom: 20px;
 }
 
+/* Styling for the About Us paragraph */
 .aboutParagraph{
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px; /* Limiting paragraph width for readability */
+    margin: 0 auto; /* Centers the paragraph */
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.6; /* Improved line height for readability */
     color: #333;
     text-align: center;
 }
+
+/* About section flexbox styling to arrange text and images */
 .aboutSection{
     display: flex;
     align-items: center;
@@ -226,72 +173,77 @@ html {
     gap: 40px;
     margin: 40px 0;
     padding: 0 40px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows wrapping of content on small screens */
 }
 
+/* Image styling for about section images */
 .aboutSection img{
     width: 300px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
 }
 
+/* Styling for paragraph text inside the about section */
 .aboutSection p{
     font-size: 18px;
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 600px; /* Limits text width for better readability */
     color: #333;
 }
 
+/* Flexbox for front-end section with horizontal alignment */
 .frontEnd{
     flex-direction: row;
 }
 
+/* Research Section: Background color and padding adjustments */
 .content3{
     grid-area: content3;
     background-color: whitesmoke;
     padding: 20px;
-    /*grid-column: 1/6; // removed due to now using auto
-    grid-row: 6/8;*/
 }
-.ResearchTitle{
 
-    
+/* Styling for research section title */
+.ResearchTitle{
     font-size: 50px;
-    color: #035daf;
+    color: #035daf; /* Blue color for consistency */
     margin-bottom: 20px;
 }
+
+/* Research links: Styling for individual articles */
 .researchLinks{
     max-width: 800px;
     margin: 20px auto;
     font-size: 18px;
     line-height: 1.6;
-    color: #222;
-    border-bottom: 1px solid #ccc;
+    color: #222; /* Darker color for text */
+    border-bottom: 1px solid #ccc; /* Underline effect */
     padding-bottom: 10px;
 }
 
+/* Styling for research links */
 .researchLinks a{
-    color: #035daf;
+    color: #035daf; /* Blue color for links */
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s, border-bottom 0.3s;
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth hover effect */
 }
 
+/* Hover effect for research links */
 .researchLinks a:hover{
     color: #003261;
     border-bottom: 2px solid #003261;
 }
 
+/* Footer Section: Dark background for visual separation */
 .footer{
     grid-area: footer;
     background-color: #1f2a37;
     padding: 10px;
-    /*grid-column: 1/6; // removed due to now using auto
-    grid-row: 8/10;*/
-    
 }
 
+/* Flexbox layout for footer contact section */
 .contact{
     display: flex;
     justify-content: center;
@@ -303,81 +255,170 @@ html {
     margin-right: 80px;
 }
 
+/* Footer 2 section: Dark background and small font size */
 .footer2{
     grid-area: footer2;
-    background-color: #444444;
-    /*grid-column: 1/6; // removed due to now using auto
-    grid-row: 10/11;*/
+    background-color: #444444; /* Dark grey footer */
     font-size: 11px;
-    margin-top: -1px;
+    margin-top: -1px; /* Removes extra gap between footer sections */
     z-index: 1;
     text-align: center;
     padding: 10px;
 }
 
-.contact {
+/* Footer contact section: Flexbox for alignment */
+.contact{
     display: flex;
-    justify-content: flex-start; /* align content to the left */
+    justify-content: flex-start; /* Aligns content to the left */
     align-items: center;
     padding: 20px 80px;
     gap: 200px;
     color: #ffffff;
 }
 
-.logoWrapper {
+/* Logo wrapper: Controls size and overlay effect */
+.logoWrapper{
     position: relative;
     display: inline-block;
     width: 150px; /* Set desired size */
     height: auto;
 }
 
-.UTMLogo {
+/* UTM logo styling */
+.UTMLogo{
     display: block;
     height: auto;
     position: relative;
     z-index: 1;
 }
 
-/* This overlay will appear on hover */
-.overlay {
+/* Overlay on logo for hover effect */
+.overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 150%;
     height: 100%;
-    background-color: rgba(100, 100, 100, 0.5); /* semi-transparent grey */
+    background-color: rgba(100, 100, 100, 0.5); /* Semi-transparent grey */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 2;
 }
 
-/* Hover state */
-.logoWrapper:hover .overlay {
+/* Hover state for logo overlay */
+.logoWrapper:hover .overlay{
     opacity: 1;
 }
 
+/* Link styling in team info section */
 .teamInfo > a{
-
-    color: #ffff;
-    transition: 0.3s ease;
+    color: #ffff; /* White color for links */
+    transition: 0.3s ease; /* Smooth color transition */
 }
 
+/* Hover effect for team info links */
 .teamInfo > a:hover{
-
-    color: #bbbbbb;
+    color: #bbbbbb; /* Light grey on hover */
 }
 
-.info p {
+/* Footer info styling */
+.info p{
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     color: #ffffff; /* Ensure it's readable on dark background */
 }
 
+/* Copyright text styling */
 .copyright{
-
-    font-weight: 700; 
+    font-weight: 700;
     text-align: center;
     color: #ffff;
-    font-family:'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ------------------------- RESPONSIVE MEDIA QUERIES ------------------------- */
+
+/* Tablets (≤ 768px): Adjustments for tablet screen sizes */
+@media (max-width: 768px){
+    .logo{
+        width: 250px;
+    }
+
+    .welcome-text{
+        font-size: 28px;
+    }
+
+    .nav-bar{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .AliHashish, .AliIsameldin, .HuHao, .aboutSection, .contact{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin: 30px 20px;
+    }
+
+    .AliHashish > p, .AliIsameldin > p, .HuHao > p, .aboutSection p{
+        width: 100%;
+        text-align: center;
+    }
+
+    .aboutParagraph, .researchLinks{
+        padding: 0 10px;
+        font-size: 16px;
+    }
+
+    .aboutTitle, .ResearchTitle{
+        font-size: 36px;
+    }
+
+    .logoWrapper{
+        width: 120px;
+    }
+
+    .contact{
+        padding: 20px;
+        gap: 40px;
+    }
+}
+
+/* Mobile Phones (≤ 480px): Adjustments for mobile screen sizes */
+@media (max-width: 480px){
+    .logo {
+        width: 200px;
+    }
+
+    .welcome-text{
+        font-size: 22px;
+    }
+
+    .nav-bar a{
+        font-size: 14px;
+    }
+
+    .aboutSection img, .AliHashish img, .AliIsameldin img, .HuHao img{
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .aboutTitle, .ResearchTitle{
+        font-size: 28px;
+    }
+
+    .aboutParagraph, .researchLinks{
+        font-size: 15px;
+    }
+
+    .footer2{
+        font-size: 10px;
+    }
+
+    .contact{
+        padding: 20px;
+        gap: 30px;
+    }
 }
